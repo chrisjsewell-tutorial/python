@@ -14,14 +14,10 @@ classifiers = [
 ]
 keywords = ["tutorial"]
 requires-python = ">=3.7"
-dependencies = [
-    "ipykernel",
-    "matplotlib",
-    "numpy",
-    "scipy"
-]
+dependencies = []
 
 [project."optional-dependencies"]
+plotting = ["matplotlib"]
 testing = ["pytest"]
 
 [tool.isort]

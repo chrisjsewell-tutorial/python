@@ -13,7 +13,7 @@ def plt_oscillator(vmax: int = 8) -> plt.Axes:
 
     x = linspace(xmin, xmax, 1000)
 
-    _, ax = plt.subplots(figsize=(8, 8))
+    fig, ax = plt.subplots(figsize=(8, 8))
 
     for v in range(8):
 
@@ -31,4 +31,4 @@ def plt_oscillator(vmax: int = 8) -> plt.Axes:
     ax.set_xlabel("x")
     ax.set_ylabel("$\psi^2_n(x)$")
 
-    return ax
+    return fig, ax

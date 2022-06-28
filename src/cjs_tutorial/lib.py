@@ -4,7 +4,7 @@ from math import exp, factorial, pi, sqrt
 from typing import Callable
 
 
-def norm(v: int) -> int:
+def norm(v: int) -> float:
     """Normalization constant"""
     return 1.0 / sqrt(sqrt(pi) * 2**v * factorial(v))
 
@@ -53,7 +53,7 @@ def psi_squared(v: int, xs: list[float], shift: float = 0) -> list[float]:
     return [x**2 + shift for x in psi(v, xs)]
 
 
-def eigenvalue(v: int) -> int:
+def eigenvalue(v: int) -> float:
     """Eigenvalues in units of h"""
     return v + 0.5
 

@@ -14,10 +14,14 @@ classifiers = [
 ]
 keywords = ["tutorial"]
 requires-python = ">=3.7"
-dependencies = []
+dependencies = [
+    "matplotlib"
+]
+
+[project.scripts]
+cjs_tutorial = "cjs_tutorial.cli:main"
 
 [project."optional-dependencies"]
-plotting = ["matplotlib"]
 testing = ["pytest"]
 
 [tool.isort]
@@ -37,4 +41,8 @@ usedevleop = true
 description = Run pytest
 extras = testing
 commands = pytest {posargs}
+
+[testenv:cli]
+description = Run the CLI
+commands = cjs_tutorial {posargs}
 """

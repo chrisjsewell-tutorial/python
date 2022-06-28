@@ -20,9 +20,19 @@ _HERMITES: dict[int, Callable[[float], float]] = {
     6: lambda x: 64 * x**6 - 480 * x**4 + 720 * x**2 - 120,
     7: lambda x: 128 * x**7 - 1344 * x**5 + 3360 * x**3 - 1680 * x,
     8: lambda x: 256 * x**8 - 3584 * x**6 + 13440 * x**4 - 13440 * x**2 + 1680,
-    9: lambda x: 512 * x**9 - 9216 * x**7 + 48384 * x**5 - 80640 * x**3 + 30240 * x,
-    10: lambda x: 1024 * x**10 - 30720 * x**8 + 180224 * x**6 - 300720 * x**4 + 158720 * x**2 - 30240,
+    9: lambda x: 512 * x**9
+    - 9216 * x**7
+    + 48384 * x**5
+    - 80640 * x**3
+    + 30240 * x,
+    10: lambda x: 1024 * x**10
+    - 30720 * x**8
+    + 180224 * x**6
+    - 300720 * x**4
+    + 158720 * x**2
+    - 30240,
 }
+
 
 def get_hermite_poly(v: int) -> Callable[[float], float]:
     """Return the hermite polynomial for the given level"""
@@ -40,7 +50,7 @@ def psi(v: int, xs: list[float]) -> list[float]:
 
 def psi_squared(v: int, xs: list[float], shift: float = 0) -> list[float]:
     """Harmonic oscillator wavefunction for level v computed on grid of points x"""
-    return [x ** 2 + shift for x in psi(v, xs)]
+    return [x**2 + shift for x in psi(v, xs)]
 
 
 def eigenvalue(v: int) -> int:
